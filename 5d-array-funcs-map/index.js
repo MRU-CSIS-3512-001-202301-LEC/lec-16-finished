@@ -5,11 +5,12 @@ let boringWords = ["sigh", "droop", "laze"];
 
 function excitify(word) {
   // 🤔 Can you do this with a string template? Try!
-  return "";
+  return `!!!!${word.toUpperCase()}!!!!`;
 }
 
 let excitingWords = boringWords.map(excitify);
-
+console.log(excitingWords);
+console.log(boringWords);
 // ------------------------------------------
 
 const photos = [
@@ -40,7 +41,8 @@ const photos = [
 ];
 
 // 🤔 What if we just want an array of the titles?
-let titles;
+let titles = photos.map((photo) => photo.title);
+console.log("titles:", titles);
 
 // 🤔 What if we wanted NEW objects composed of parts of the originals?
 // Like this:
@@ -49,16 +51,18 @@ let titles;
 //   latLong: {lat: 31, lon: 135},
 // }
 
-// let photographerLocations = photos.map((photo) => {
-//   return {
-//     artist: photo.photographer,
-//     hasBeenTo: photo.location,
-//   };
-// });
+let photographerLocations = photos.map((photo) => {
+  return {
+    artist: photo.photographer,
+    hasBeenTo: photo.location,
+  };
+});
+
+console.log("photolocs", photographerLocations);
 
 // or - and this is an arrow function gotcha:
 
-// let photographerLocations = photos.map((photo) => ({
-//   artist: photo.photographer,
-//   hasBeenTo: photo.location,
-// }));
+let photographerLocations = photos.map((photo) => ({
+  artist: photo.photographer,
+  hasBeenTo: photo.location,
+}));

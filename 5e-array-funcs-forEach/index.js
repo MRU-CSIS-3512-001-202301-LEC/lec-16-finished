@@ -1,8 +1,8 @@
 const nums = [1, 2, 3, 4, 5, 6];
 
-function log(something) {
-  console.log(something);
-}
+// nums.forEach((num) => {
+//   console.log("here", num);
+// });
 
 // 🤔 What will this do?
 // nums.forEach(log);
@@ -37,7 +37,7 @@ const orders = [
 const otherNums = [3, 5, -1, 17, 0];
 
 otherNums.forEach((num) => {
-  if (num == -1) {
+  if (num === -1) {
     return;
   } else {
     console.log(num);

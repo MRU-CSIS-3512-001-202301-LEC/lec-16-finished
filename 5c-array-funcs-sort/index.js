@@ -17,6 +17,11 @@ function shoeComparator(shoeSize1, shoeSize2) {
   return shoeSize2 - shoeSize1;
 }
 
+let sortedShoeSizes = shoeSizes.sort(
+  (shoeSize1, shoeSize2) => shoeSize1 - shoeSize2,
+);
+console.log("sorted shoes", sortedShoeSizes);
+
 const adventurers = [
   {
     name: "Jampa",
@@ -48,8 +53,19 @@ const adventurers = [
   },
 ];
 
+function advComparator(adv1, adv2) {
+  let diff = adv2.level - adv1.level;
+  if (dif === 0) {
+    return adv2.name.localeCompare(adv1.name);
+  } else {
+    return diff;
+  }
+}
+
 // 🤔 How would you sort these by level ascending?
-let sortedByLevelAsc; // ??
+let sortedByLevelAsc = adventurers
+  .sort((adv1, adv2) => adv2.level - adv1.level)
+  .sort((adv1, adv2) => adv2.name.localeCompare(adv1.name));
 console.log("sorted by level, asc:", sortedByLevelAsc);
 
 // 🤔 How would you sort these by level DESCENDING?
